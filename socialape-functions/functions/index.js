@@ -9,7 +9,10 @@ const {
     getAllScreams,
     postOneScream,
     getScream,
-    commentOnScream
+    commentOnScream,
+    likeScream,
+    unlikeScream,
+    deleteScream
 } = require('./handlers/screams');
 
 const {
@@ -26,9 +29,9 @@ const {
 app.get('/screams', getAllScreams); // Get "screams" in firebase table and return em as JSON Object written with express
 app.post('/scream',  FBAuth, postOneScream); // Create a new Stream to firebase database
 app.get('/scream/:screamId', getScream); // Route parameters
-// TODO: delete scream
-// TODO: like a scream
-// TODO: unlike a scream
+app.delete('/scream/:screamId', FBAuth, deleteScream);
+app.get('/scream/:screamId/like', FBAuth, likeScream);
+app.get('/scream/:screamId/unlike', FBAuth, unlikeScream);
 app.post('/scream/:screamId/comment', FBAuth, commentOnScream);
 
 /*
