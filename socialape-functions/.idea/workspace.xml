@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63a01ad7-aae9-44b0-abfc-6f6e4718c14f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../socialape-client/src/components/Scream.js" beforeDir="false" afterPath="$PROJECT_DIR$/../socialape-client/src/components/Scream.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/handlers/screams.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/handlers/screams.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/handlers/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/handlers/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +61,9 @@
       <workItem from="1567676956713" duration="38000" />
       <workItem from="1567680527437" duration="42000" />
       <workItem from="1567680654356" duration="21000" />
-      <workItem from="1567685761800" duration="2474000" />
+      <workItem from="1567685761800" duration="4150000" />
+      <workItem from="1568012534599" duration="15000" />
+      <workItem from="1568013950007" duration="103000" />
     </task>
     <servers />
   </component>
