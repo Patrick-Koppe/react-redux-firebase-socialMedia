@@ -1,33 +1,31 @@
-import React, {Component} from 'react';
-import withStyles from "@material-ui/core/styles/withStyles";
+import React, { Component } from 'react';
+import withStyles from '@material-ui/core/styles/withStyles';
 import PropTypes from 'prop-types';
 import AppIcon from '../images/icon.png';
 import { Link } from 'react-router-dom';
 
-
-// Mui stuff
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
-import CircularProgress from "@material-ui/core/CircularProgress";
-
+// MUI Stuff
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import CircularProgress from '@material-ui/core/CircularProgress';
 // Redux stuff
 import { connect } from 'react-redux';
-import { signupUser} from "../redux/actions/userActions";
+import { signupUser } from '../redux/actions/userActions';
 
-const styles = {
+const styles = () => ({
   form: {
     textAlign: 'center'
   },
   image: {
-    margin: '20px auto'
+    margin: '20px auto 20px auto'
   },
   pageTitle: {
-    margin: '10px auto'
+    margin: '10px auto 10px auto'
   },
   textField: {
-    margin: '10px auto'
+    margin: '10px auto 10px auto'
   },
   button: {
     marginTop: 20,
@@ -41,12 +39,9 @@ const styles = {
   progress: {
     position: 'absolute'
   }
-};
+});
 
-
-
-class Signup extends Component {
-  //controlled component
+class signup extends Component {
   constructor() {
     super();
     this.state = {
@@ -55,7 +50,7 @@ class Signup extends Component {
       confirmPassword: '',
       handle: '',
       errors: {}
-    }
+    };
   }
   componentWillReceiveProps(nextProps) {
     if (nextProps.UI.errors) {
@@ -78,18 +73,22 @@ class Signup extends Component {
   handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value
-    })
+    });
   };
   render() {
-    const { classes,  UI: { loading }} = this.props;
-    const { errors} = this.state;
+    const {
+      classes,
+      UI: { loading }
+    } = this.props;
+    const { errors } = this.state;
+
     return (
       <Grid container className={classes.form}>
         <Grid item sm />
         <Grid item sm>
-          <img src={AppIcon} alt="logo" className={classes.image}/>
+          <img src={AppIcon} alt="monkey" className={classes.image} />
           <Typography variant="h2" className={classes.pageTitle}>
-            Sign up
+            SignUp
           </Typography>
           <form noValidate onSubmit={this.handleSubmit}>
             <TextField
@@ -151,13 +150,16 @@ class Signup extends Component {
               color="primary"
               className={classes.button}
               disabled={loading}
-            >Sign up
+            >
+              SignUp
               {loading && (
-                <CircularProgress size={30} className={classes.progress}/>
+                <CircularProgress size={30} className={classes.progress} />
               )}
             </Button>
             <br />
-            <small>Already have an account ? login <Link to="/login">here</Link></small>
+            <small>
+              Already have an account ? Login <Link to="/login">here</Link>
+            </small>
           </form>
         </Grid>
         <Grid item sm />
@@ -166,7 +168,7 @@ class Signup extends Component {
   }
 }
 
-Signup.propTypes = {
+signup.propTypes = {
   classes: PropTypes.object.isRequired,
   user: PropTypes.object.isRequired,
   UI: PropTypes.object.isRequired,
@@ -178,4 +180,7 @@ const mapStateToProps = (state) => ({
   UI: state.UI
 });
 
-export default connect(mapStateToProps, { signupUser })(withStyles(styles)(Signup));
+export default connect(
+  mapStateToProps,
+  { signupUser }
+)(withStyles(styles)(signup));
